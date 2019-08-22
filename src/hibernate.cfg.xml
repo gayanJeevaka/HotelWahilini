@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hotel_wahilini</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <mapping class="wahilini.window.entity.Employee"/>
+    <mapping class="wahilini.window.entity.Customer"/>
+    <mapping class="wahilini.window.entity.Supplier"/>
+    <mapping class="wahilini.window.entity.SysUser"/>
+    <mapping class="wahilini.window.entity.Module"/>
+    <mapping class="wahilini.window.entity.Privilege"/>
+    <mapping class="wahilini.window.entity.ItemType"/>
+    <mapping class="wahilini.window.entity.Category"/>
+    <mapping class="wahilini.window.entity.Item"/>
+    <mapping class="wahilini.window.entity.Invoice"/>
+    <mapping class="wahilini.window.entity.Invoiceitems"/>
+    <mapping class="wahilini.window.entity.SalesReturn"/>
+    <mapping class="wahilini.window.entity.Grn"/>
+    <mapping class="wahilini.window.entity.GrnItems"/>
+    <mapping class="wahilini.window.entity.DamageReturn"/>
+    <mapping class="wahilini.window.entity.ReturnItems"/>
+    <mapping class="wahilini.window.entity.Expense"/>
+    <mapping class="wahilini.window.entity.ChequePayment"/>    
+    <mapping class="wahilini.window.entity.CrudStatus"/>
+     <mapping class="wahilini.window.entity.RoomTable"/>
+      <mapping class="wahilini.window.entity.TempBillDetails"/>
+  </session-factory>
+</hibernate-configuration>

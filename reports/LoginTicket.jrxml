@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="229" pageHeight="284" columnWidth="215" leftMargin="7" rightMargin="7" topMargin="7" bottomMargin="7" uuid="11beb28f-3b8f-48e4-b672-e879258c42b7">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Employee_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     employee.`id` AS employee_id,
+     employee.`name` AS employee_name,
+     employee.`nic` AS employee_nic
+FROM
+     `employee` employee
+
+where id=$P{Employee_ID}]]>
+	</queryString>
+	<field name="employee_id" class="java.lang.Integer"/>
+	<field name="employee_name" class="java.lang.String"/>
+	<field name="employee_nic" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d1f23347-d147-4bbc-8be4-dffc77197a9b" x="74" y="1" width="57" height="20"/>
+				<textElement>
+					<font fontName="kaputadotcom" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[shn k@dQ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="68e48790-f4e2-4913-b8bc-92b1cc85d5cb" x="22" y="21" width="41" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[No.16  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ac749bcb-bfb3-4746-a5d5-aa22f2cf8a02" x="63" y="21" width="129" height="20"/>
+				<textElement>
+					<font fontName="kaputadotcom" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[@klQn~ vWqQy hAv#l~l]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ebebfa2-8b27-4d6f-be04-eaf655aa1779" x="3" y="41" width="206" height="12"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEL : 071 - 7210201 , 036 - 2252950]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="cbc898d8-b1a7-448a-a7c2-e4668051995e" x="0" y="55" width="215" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="88" splitType="Stretch">
+			<textField>
+				<reportElement uuid="08ee9c60-e37a-4c34-a92e-db5bfe12c83c" x="65" y="4" width="144" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{employee_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c2842f6-d075-43db-b539-5bb10e3433e1" x="65" y="34" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{employee_nic}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a">
+				<reportElement uuid="1ce4ef4b-a563-4205-8e92-a3d704d20b26" x="65" y="62" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b0539678-1758-42a8-b5d4-b7034ae2f0dd" x="5" y="34" width="60" height="20"/>
+				<textElement/>
+				<text><![CDATA[NIC :-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d79f9d3e-095f-403e-af1e-4ba3209d50f8" x="5" y="3" width="60" height="20"/>
+				<textElement/>
+				<text><![CDATA[Employee :-]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="cbc898d8-b1a7-448a-a7c2-e4668051995e" x="3" y="86" width="206" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="b0539678-1758-42a8-b5d4-b7034ae2f0dd" x="5" y="62" width="60" height="20"/>
+				<textElement/>
+				<text><![CDATA[Login Time :-]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="1ce4ef4b-a563-4205-8e92-a3d704d20b26" x="140" y="62" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

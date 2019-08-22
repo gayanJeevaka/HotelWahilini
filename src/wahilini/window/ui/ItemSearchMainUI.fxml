@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.ItemSearchMainUIController">
+   <children>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="153.0" layoutY="53.0" prefHeight="60.0" prefWidth="727.0" />
+      <ImageView fitHeight="56.0" fitWidth="59.0" layoutX="156.0" layoutY="56.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Inventory.png" />
+         </image>
+      </ImageView>
+      <TextField id="TxtEmp" fx:id="txtSerItemName" layoutX="302.0" layoutY="67.0" onKeyReleased="#txtSerItemNameKR" promptText="Enter Item Name">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></TextField>
+      <TableView fx:id="ItemTable" layoutX="46.0" layoutY="120.0" prefHeight="462.0" prefWidth="1027.0" styleClass="table-view-cell">
+         <columns>
+            <TableColumn fx:id="colItemName" prefWidth="300.0" text="Item Name" />
+            <TableColumn fx:id="colItemType" minWidth="0.0" prefWidth="150.0" resizable="false" text="Item Type" />
+            <TableColumn fx:id="colBrand" minWidth="0.0" prefWidth="150.0" text="Brand" />
+            <TableColumn id="table-cell-right" fx:id="colCost" prefWidth="100.0" text="Cost" />
+            <TableColumn id="table-cell-right" fx:id="colRetPrice" prefWidth="100.0" text="Retail Price" />
+            <TableColumn id="table-cell-right" fx:id="colItemCode" minWidth="0.0" prefWidth="100.0" text="ROP" />
+            <TableColumn id="table-cell-right" fx:id="colStockQty" prefWidth="100.0" text="Stock Qty" />
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Label layoutX="219.0" layoutY="70.0" text="Item Name :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label id="labelColor" contentDisplay="TOP" layoutY="-1.0" prefHeight="48.0" prefWidth="1250.0" stylesheets="@css/Custom.css" text="Item Price List" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <Button layoutX="766.0" layoutY="65.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="34.0" prefWidth="59.0" text="Clear" />
+      <ComboBox fx:id="cmbItemType" layoutX="564.0" layoutY="66.0" onAction="#cmbItemTypeAP" prefHeight="30.0" prefWidth="161.0" promptText="-- Select Brand --" />
+      <Label layoutX="506.0" layoutY="73.0" text="Brand :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+</AnchorPane>

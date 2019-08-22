@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneLogin" onKeyReleased="#paneLoginKR" prefHeight="351.0" prefWidth="567.0" styleClass="mainFxmlClass" stylesheets="@css/Login.css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.LoginUIController">
+<children>
+      <TextField fx:id="txtUsername" alignment="TOP_LEFT" layoutX="230.0" layoutY="131.0" prefHeight="30.0" prefWidth="210.0" promptText="ENTER VALID USER NAME" styleClass="txt">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <PasswordField fx:id="txtPassword" alignment="TOP_LEFT" layoutX="230.0" layoutY="197.0" prefHeight="30.0" prefWidth="210.0" promptText="ENTER VALID PASSWORD" styleClass="txt">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <Button fx:id="btnLogin" layoutX="232.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnLoginAP" prefHeight="41.0" prefWidth="133.0" styleClass="Login-button" text="Login">
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#e9eaeb" height="11.36" radius="5.365" width="12.1" />
+         </effect>
+         <font>
+            <Font size="1.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="366.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnCancelAP" prefHeight="41.0" prefWidth="74.0" styleClass="button-Cancel" text="Cancel" />
+      <Label fx:id="lblMessage" layoutX="90.0" layoutY="63.0" textFill="#eb5454">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="62.0" fitWidth="74.0" layoutX="138.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="138.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/pw.png" />
+         </image>
+      </ImageView>
+      <Pane layoutY="304.0" prefHeight="50.0" prefWidth="567.0" styleClass="toolBar">
+         <children>
+            <Label layoutX="216.0" layoutY="10.0" text="Hotel Wahilini" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="60.0" prefWidth="567.0" styleClass="toolBar" stylesheets="@css/controls.css">
+         <children>
+            <Label layoutX="199.0" layoutY="12.0" text="SYSTEM LOGIN" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+</children>
+</AnchorPane>

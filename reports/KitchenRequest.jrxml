@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="325" pageHeight="595" columnWidth="285" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7afb953-5abb-425a-a974-610b0ae58172">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="orderNo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     item.`item_name` AS item_item_name,
+     temp_bill_details.`item_id` AS temp_bill_details_item_id,
+     temp_bill_details.`qty` AS temp_bill_details_qty,
+     room_table.`name` AS room_table_name,
+     temp_bill_details.`id` AS temp_bill_details_id,
+     temp_bill_details.`order_no` AS temp_bill_details_order_no,
+     temp_bill_details.`room_table_id` AS temp_bill_details_room_table_id
+FROM
+     `item` item INNER JOIN `temp_bill_details` temp_bill_details ON item.`id` = temp_bill_details.`item_id`
+     INNER JOIN `room_table` room_table ON temp_bill_details.`room_table_id` = room_table.`id`
+WHERE
+     temp_bill_details.`room_table_id` = $P{id}
+	AND
+	temp_bill_details.`order_no`= $P{orderNo}]]>
+	</queryString>
+	<field name="item_item_name" class="java.lang.String"/>
+	<field name="temp_bill_details_item_id" class="java.lang.Integer"/>
+	<field name="temp_bill_details_qty" class="java.lang.Integer"/>
+	<field name="room_table_name" class="java.lang.String"/>
+	<field name="temp_bill_details_id" class="java.lang.Integer"/>
+	<field name="temp_bill_details_order_no" class="java.lang.Integer"/>
+	<field name="temp_bill_details_room_table_id" class="java.lang.Integer"/>
+	<variable name="ROW_NUMBER" class="java.lang.Number" calculation="Count">
+		<variableExpression><![CDATA[$F{item_item_name}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d1f23347-d147-4bbc-8be4-dffc77197a9b" x="0" y="0" width="287" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOTEL WAHILINI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d1f23347-d147-4bbc-8be4-dffc77197a9b" x="0" y="17" width="287" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kitchen Order Ticket]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="703b62a4-8083-4ad6-8600-1d4c5fd325da" x="0" y="34" width="71" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a">
+				<reportElement uuid="15c45be9-ad89-4e5d-991f-fa8bbd31251f" x="71" y="34" width="70" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0a020a4b-db73-4775-93da-e80a75b757aa" x="141" y="59" width="71" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Descrption:-]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="1f2c809a-dbff-4b61-a6ab-20aa1b668d2a" x="212" y="59" width="73" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{room_table_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement uuid="b55d3d95-cae2-4704-8ab8-d2dce3b11bfc" x="44" y="0" width="196" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0a020a4b-db73-4775-93da-e80a75b757aa" x="240" y="0" width="22" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="279e4014-df63-476d-be94-afc8b032145c" x="20" y="0" width="24" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement uuid="b52693b4-447c-407e-9448-1e0748a2c064" x="44" y="0" width="196" height="21"/>
+				<box leftPadding="3">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{item_item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1f2c809a-dbff-4b61-a6ab-20aa1b668d2a" x="240" y="0" width="22" height="21"/>
+				<box rightPadding="2">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{temp_bill_details_qty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement uuid="66c5676c-7cc4-4ab3-93e4-2bb92f832254" x="20" y="0" width="24" height="21"/>
+				<box rightPadding="3">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{ROW_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="27"/>
+	</summary>
+</jasperReport>

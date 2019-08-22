@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Gift_Items_ShopPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>wahilini.window.entity.CrudStatus</class>
+    <class>wahilini.window.entity.BatteryChargeItem</class>
+    <class>wahilini.window.entity.Customer</class>
+    <class>wahilini.window.entity.Module</class>
+    <class>wahilini.window.entity.Supplier</class>
+    <class>wahilini.window.entity.SysUser</class>
+    <class>wahilini.window.entity.BatteryCharge</class>
+    <class>wahilini.window.entity.Employee</class>
+    <class>wahilini.window.entity.Privilege</class>
+    <class>wahilini.window.entity.RoomTable</class>
+    <class>wahilini.window.entity.TempBillDetails</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gift_items_shop"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,84 @@
+
+.mainFxmlClass {-fx-background-color: #EEEEEE;}
+.Pane{
+    -fx-background-color: #3366ff;
+    -fx-padding: 15;
+    -fx-spacing: 25;
+}
+
+#balance-pane{-fx-background-color:#666666;}      
+#pane-square{
+    -fx-background-radius: 0px;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 0px;
+    -fx-border-color: #666666;
+}
+#label-align{-fx-alignment: CENTER_RIGHT;}
+
+/*Label for grouping elements*/
+#Label {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #4283de;
+    -fx-border-radius: 10px;
+
+}
+/*Label Main Header*/
+#labelColor{ -fx-background-color:#4283de;}
+#labelColor2{ -fx-background-color:#ccccff;}
+
+#Other-Field{
+    -fx-background-insets:0;
+    -fx-background-radius:0px;
+    -fx-border-color:#c0c0c0;
+}
+TextField{
+    -fx-background-insets:0;
+    -fx-background-radius:0px;
+    -fx-border-color:#c0c0c0;
+}
+PasswordField{
+    -fx-background-insets:0;
+    -fx-background-radius:0px;
+    -fx-border-color:#c0c0c0;
+}
+ComboBox{
+    -fx-background-insets:0;
+    -fx-background-radius:0px;
+    -fx-border-color:#c0c0c0;  
+    -fx-background-insets:0;
+    -fx-font-size: 11pt;
+    -fx-font-family: calibri;
+}
+/*Sinhala ComboBox*/
+#comboBox-sinhala{
+    -fx-font-family: FMBindumathi;
+    -fx-font-size:12pt;
+}
+Button{
+    -fx-text-fill:white;
+    -fx-background-color:linear-gradient(#666666 10%, #232723 70%);
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+Button:hover{
+    -fx-background-color:
+        linear-gradient(#666666 0%, #232723 25%, #666666 75%, #232723 100%);
+}
+Button:pressed{
+    -fx-scale-x:0.90;
+    -fx-scale-y:0.90;
+}
+#button-Delete{
+    -fx-text-fill:white;
+    -fx-background-color:linear-gradient(#ff9999 10%, #ff3333 70%);
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+#button-Delete:hover{
+    -fx-background-color:
+        linear-gradient(#666666 0%, #ff3333 25%,#ff9999 75%,#ff6666 100%);
+}

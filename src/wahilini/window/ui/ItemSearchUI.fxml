@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneItemSearch" onKeyReleased="#paneItemSearchKR" prefHeight="550.0" prefWidth="396.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.ItemSearchUIController">
+   <children>
+      <TextField fx:id="txtSerItemName" layoutX="131.0" layoutY="46.0" onKeyReleased="#txtSerItemNameKR" prefHeight="24.0" prefWidth="200.0" promptText=" Enter Item Name">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <TableView fx:id="ItemTable" layoutX="9.0" layoutY="84.0" onKeyReleased="#itemTableKR" prefHeight="462.0" prefWidth="380.0">
+         <columns>
+            <TableColumn fx:id="colItemName" prefWidth="266.0" resizable="false" text="Item Name " />
+            <TableColumn id="table-cell-right" fx:id="colItemPrice" minWidth="0.0" prefWidth="90.0" resizable="false" text="Ret Price" />
+         </columns>
+      </TableView>
+      <Label layoutX="33.0" layoutY="53.0" text="Item Name :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <ComboBox fx:id="cmbItemType" layoutX="131.0" layoutY="12.0" onAction="#cmbItemTypeAP" prefHeight="30.0" prefWidth="200.0" promptText="-- Select Type --" />
+      <Label layoutX="33.0" layoutY="19.0" text="Item Type :--">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import jfxtras.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.CategoryUIController">
+   <children>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="282.0" layoutY="50.0" prefHeight="527.0" prefWidth="310.0" />
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="623.0" layoutY="51.0" prefHeight="527.0" prefWidth="333.0" />
+      <TextField id="TxtEmp" fx:id="txtCategory" layoutX="712.0" layoutY="71.0" onKeyReleased="#txtCategoryKR" prefHeight="25.0" prefWidth="200.0">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Label layoutX="634.0" layoutY="76.0" text="Category :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="300.0" layoutY="75.0" text="Item Type :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField id="TxtEmp" fx:id="txtItemType" layoutX="377.0" layoutY="68.0" onKeyReleased="#txtItemTypeKR" prefHeight="25.0" prefWidth="200.0">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <ListView id="list-view-english" fx:id="lstItemType" layoutX="312.0" layoutY="134.0" onMouseClicked="#lstItemTypeMC" pickOnBounds="false" prefHeight="425.0" prefWidth="250.0" />
+      <ListView id="list-view-english" fx:id="lstCategory" layoutX="661.0" layoutY="135.0" onMouseClicked="#lstCategoryMC" prefHeight="425.0" prefWidth="267.0" />
+      <Button fx:id="btnCategoryAdd" layoutX="851.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnCategoryAddAP" prefHeight="27.0" prefWidth="61.0" styleClass="button-Cruds" text="Add" />
+      <Button fx:id="btnItemTypeAdd" layoutX="516.0" layoutY="100.0" mnemonicParsing="false" onAction="#btnItemTypeAddAP" prefHeight="27.0" prefWidth="61.0" styleClass="button-Cruds" text="Add" />
+      <Button id="button-Delete" fx:id="btnItemRemove" layoutX="445.0" layoutY="100.0" mnemonicParsing="false" onAction="#btnItemTypeRemoveAP" styleClass="button-Delete" text="Remove" />
+      <Button id="button-Delete" fx:id="btnCategoryRemove" layoutX="779.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnCategoryRemoveAP" styleClass="button-Delete" text="Remove" />
+      <Label id="labelColor" contentDisplay="TOP" prefHeight="46.0" prefWidth="1250.0" stylesheets="@css/Custom.css" text="                                          Category Registration" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="506.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/category.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1018.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="40.0" prefWidth="60.0" styleClass="button-Cruds" text="Clear">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+</AnchorPane>

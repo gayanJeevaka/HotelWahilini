@@ -1,0 +1,99 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.HeaderBg{
+    -fx-background-color: #4d4d4d;
+}
+.btnExit{
+    -fx-background-color:transparent
+
+}
+.btnLogOff{
+    -fx-background-color:transparent
+
+}
+.LeftMenu{
+    -fx-background-color:#676767;
+    -fx-border-color:#727272; 
+}
+.LeftMenu:hover{
+    -fx-background-color:#5d5d5d;
+
+}
+.LeftMenu:focused{
+    -fx-background-color:#4283de;
+    -fx-border-color:#4283de;
+}
+
+.ClockView{
+    -fx-font-family:'Digital-7 Mono'; 
+    -fx-border-color: none;
+    -fx-background-color:none;
+    -fx-text-fill:#ffffff;
+    -fx-font-weight:bold;
+    -fx-font-size:24px;
+}
+#minimize-button{    
+    -fx-background-color:transparent;
+    -fx-background-image:url('minimize.png');
+    -fx-background-size: stretch;
+}
+#close-button{
+    -fx-background-color:transparent;
+    -fx-background-image:url('close.png');
+    -fx-background-size: stretch;
+}
+
+#close-button:pressed{
+
+    -fx-scale-x:0.90;
+    -fx-scale-y:0.90;
+}
+.pane{
+
+    -fx-background-color:#4d4d4d;
+
+
+}
+.menu-bar{
+
+
+    -fx-padding: 5px;
+
+
+}
+.Button{
+    -fx-text-fill:white;
+    -fx-background-color:#4d4d4d;
+
+
+}
+
+.Button:hover{
+    -fx-background-color:
+        linear-gradient(#666666 0%, #232723 25%, #666666 75%, #232723 100%);
+}
+
+.Button:pressed{
+    -fx-scale-x:0.90;
+    -fx-scale-y:0.90;
+
+}
+#mainWindowButton{
+    -fx-background-color:#D92E02;
+    -fx-border-color:#D92E02;
+}
+#mainWindowButton:hover{
+    -fx-scale-x:0.95;
+    -fx-scale-y:0.95;
+
+}
+#mainWindowButton:pressed{
+  -fx-scale-x:0.90;
+    -fx-scale-y:0.90;
+
+}

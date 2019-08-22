@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.PrivilegeUIController">
+   <children>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="260.0" layoutY="229.0" prefHeight="225.0" prefWidth="348.0" />
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="261.0" layoutY="88.0" prefHeight="120.0" prefWidth="348.0" />
+      <ComboBox id="TxtEmp" fx:id="cmbEmployee" layoutX="390.0" layoutY="108.0" onAction="#cmbEmployeeAP" prefWidth="200.0" promptText="Select Employee" />
+      <Label layoutX="279.0" layoutY="112.0" text="Employee :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TableView id="table-row-cell" fx:id="tbPrivilege" layoutX="632.0" layoutY="87.0" prefHeight="480.0" prefWidth="348.0">
+        <columns>
+          <TableColumn fx:id="colModule" prefWidth="214.0" text="Module" />
+          <TableColumn fx:id="colPrivilege" prefWidth="133.0" text="Privilege" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Button fx:id="btnChange" layoutX="354.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnChangeAP" prefHeight="38.0" prefWidth="73.0" styleClass="button-Cruds" text="Save">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnClear" layoutX="427.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="38.0" prefWidth="75.0" styleClass="button-Cruds" text="Clear">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="376.0" layoutY="243.0" text="Set Privilege 0-4" underline="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="319.0" layoutY="370.0" text="3 - Read/Write/Update Only">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="319.0" layoutY="310.0" text="1 - Read Only">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="319.0" layoutY="340.0" text="2 - Read / Write Only">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="319.0" layoutY="400.0" text="4 - Read/Write/Update/Delete Only">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="320.0" layoutY="280.0" text="0 - No Privilege">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label id="labelColor" contentDisplay="TOP" prefHeight="48.0" prefWidth="1250.0" stylesheets="@css/controls.css" text="Privilege &amp; User Manageent" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <ComboBox id="TxtEmp" fx:id="cmbOperation" layoutX="389.0" layoutY="159.0" prefWidth="200.0" promptText="Select Operation" />
+      <Label layoutX="278.0" layoutY="163.0" text="Operation :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ImageView fitHeight="48.0" fitWidth="40.0" layoutX="304.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/password.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+</AnchorPane>

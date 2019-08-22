@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="324" pageHeight="595" columnWidth="324" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="388e3b81-352d-492f-9cfe-0cadb29f3c67">
+	<property name="ireport.zoom" value="2.1435888100000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="54"/>
+	<parameter name="invoiceId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     invoice.`id` AS invoice_id,
+     invoice.`inv_no` AS invoice_inv_no,
+     invoice.`grand_total` AS invoice_grand_total,
+     invoice.`total_discount` AS invoice_total_discount,
+     invoice.`net_total` AS invoice_net_total,
+     invoice.`inv_date` AS invoice_inv_date,
+     invoice.`paid_amount` AS invoice_paid_amount,
+     invoice.`balance_amount` AS invoice_bal_amount,
+     invoice.`inv_time` AS invoice_inv_time,
+     employee.`name` AS employee_name,
+     invoiceitems.`unit_price` AS invoiceitems_unit_price,
+     invoiceitems.`sub_total` AS invoiceitems_sub_total,
+     invoiceitems.`qty` AS invoiceitems_qty,
+     invoiceitems.`discount` AS invoiceitems_discount,
+     item.`Item_Name` AS item_Item_Name,
+     item.`Retail_Price` AS item_Retail_Price,
+     customer.`name` AS customer_name,
+     invoice.`service_charge` AS invoice_service_charge,
+     invoice.`pay_type` AS invoice_pay_type
+FROM
+     `invoice` invoice INNER JOIN `employee` employee ON invoice.`employee_id` = employee.`id`
+     INNER JOIN `invoice_items` invoiceitems ON invoice.`id` = invoiceitems.`Invoice_id`
+     INNER JOIN `customer` customer ON invoice.`customer_id` = customer.`id`
+     INNER JOIN `item` item ON invoiceitems.`Item_Id` = item.`Id`
+WHERE
+     invoice.`id` = $P{invoiceId}]]>
+	</queryString>
+	<field name="invoice_id" class="java.lang.Integer"/>
+	<field name="invoice_inv_no" class="java.lang.String"/>
+	<field name="invoice_grand_total" class="java.math.BigDecimal"/>
+	<field name="invoice_total_discount" class="java.math.BigDecimal"/>
+	<field name="invoice_net_total" class="java.math.BigDecimal"/>
+	<field name="invoice_inv_date" class="java.sql.Date"/>
+	<field name="invoice_paid_amount" class="java.math.BigDecimal"/>
+	<field name="invoice_bal_amount" class="java.math.BigDecimal"/>
+	<field name="invoice_inv_time" class="java.sql.Time"/>
+	<field name="employee_name" class="java.lang.String"/>
+	<field name="invoiceitems_unit_price" class="java.math.BigDecimal"/>
+	<field name="invoiceitems_sub_total" class="java.math.BigDecimal"/>
+	<field name="invoiceitems_qty" class="java.math.BigDecimal"/>
+	<field name="invoiceitems_discount" class="java.math.BigDecimal"/>
+	<field name="item_Item_Name" class="java.lang.String"/>
+	<field name="item_Retail_Price" class="java.math.BigDecimal"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="invoice_service_charge" class="java.math.BigDecimal"/>
+	<field name="invoice_pay_type" class="java.lang.String"/>
+	<variable name="RowCount" class="java.lang.Number" calculation="Count">
+		<variableExpression><![CDATA[$F{item_Item_Name}]]></variableExpression>
+	</variable>
+	<variable name="OurPrice" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{invoiceitems_sub_total}/$F{invoiceitems_qty}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="109" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d1f23347-d147-4bbc-8be4-dffc77197a9b" x="16" y="11" width="287" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOTEL WAHILINI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ac749bcb-bfb3-4746-a5d5-aa22f2cf8a02" x="16" y="28" width="287" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[645/A, Awissawellawella rd, Mulleriyawa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ebebfa2-8b27-4d6f-be04-eaf655aa1779" x="16" y="43" width="287" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TEL : 077- 2953-863]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b62eac3-8c3e-4aca-9e5b-b87a4a4aadc5" x="228" y="74" width="26" height="14"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="12e69505-60a2-4881-a257-e6e1a6ed82c1" x="254" y="74" width="45" height="14"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement uuid="e6dfe681-b861-4a21-97e5-14672d3afbe2" x="126" y="59" width="49" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_inv_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e507643b-849f-4931-a194-d6b91db83d55" x="84" y="74" width="142" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="7a30c2ef-112e-4f14-841a-efb6627c418a" x="67" y="59" width="59" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_inv_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="508de3af-0978-4f19-b7e3-735f0faa74fc" x="54" y="90" width="80" height="17"/>
+				<box topPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b5945fc3-d6ff-431f-87ff-aa07a15fde27" x="16" y="107" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="b5945fc3-d6ff-431f-87ff-aa07a15fde27" x="16" y="89" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="940c02e8-c77d-4b95-bb6f-ab6f8d9de35e" x="196" y="90" width="30" height="17"/>
+				<box topPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ff09f131-a503-4756-848d-f0d768cb3419" x="24" y="59" width="39" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ff09f131-a503-4756-848d-f0d768cb3419" x="24" y="74" width="60" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5b69c2b9-cec8-4a89-8ab0-c169bbf5a506" x="232" y="90" width="21" height="17"/>
+				<box topPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="00970138-786e-43c3-a0c3-65a1f4348576" x="253" y="90" width="37" height="17"/>
+				<box topPadding="2">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ff09f131-a503-4756-848d-f0d768cb3419" x="188" y="59" width="36" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="12e69505-60a2-4881-a257-e6e1a6ed82c1" x="224" y="59" width="76" height="14"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_pay_type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="35">
+			<textField>
+				<reportElement uuid="f556438e-971f-4c7e-a9a5-d1c7a7c7a34c" x="28" y="0" width="159" height="32"/>
+				<box topPadding="0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_Item_Name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.0">
+				<reportElement uuid="91f8c0f8-d64b-455a-bb0c-b390a2f6f655" x="253" y="0" width="42" height="13"/>
+				<box topPadding="0"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoiceitems_sub_total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement uuid="29d70ba9-d201-4f45-b6a6-de00efb8bc31" x="229" y="0" width="24" height="13"/>
+				<box topPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoiceitems_qty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement uuid="db9f8518-4667-424f-9fac-94cca56dc5f9" x="16" y="0" width="12" height="13"/>
+				<box topPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{RowCount}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.0">
+				<reportElement uuid="c5b7b0d4-0c84-41ec-8f12-f359692af6e1" x="187" y="0" width="42" height="13"/>
+				<box topPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_Retail_Price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="119" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3ec07a1d-1f7f-4ef1-9cfd-848375090c22" x="172" y="2" width="61" height="13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Gross Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ec07a1d-1f7f-4ef1-9cfd-848375090c22" x="172" y="34" width="61" height="13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ec07a1d-1f7f-4ef1-9cfd-848375090c22" x="172" y="50" width="61" height="13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ec07a1d-1f7f-4ef1-9cfd-848375090c22" x="172" y="63" width="61" height="13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Paid Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ec07a1d-1f7f-4ef1-9cfd-848375090c22" x="172" y="80" width="72" height="13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Balance Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0d74a266-24ee-42d7-81b8-555dd8f0b39d" x="244" y="2" width="47" height="13"/>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_grand_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d74a266-24ee-42d7-81b8-555dd8f0b39d" x="244" y="50" width="47" height="13"/>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_net_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d74a266-24ee-42d7-81b8-555dd8f0b39d" x="244" y="34" width="47" height="13"/>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_total_discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d74a266-24ee-42d7-81b8-555dd8f0b39d" x="244" y="63" width="47" height="13"/>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_paid_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d74a266-24ee-42d7-81b8-555dd8f0b39d" x="244" y="80" width="47" height="13"/>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_bal_amount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="5fee9a15-4ae2-4707-b909-18426d6299b1" x="244" y="47" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="62e1812c-a513-4035-9a23-c353feff43a4" x="244" y="77" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="f8a42989-6e71-45d3-957a-bb16c5cd3643" x="244" y="94" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="a594cd97-f43a-4261-acc5-4e7e3db93a8f" x="244" y="96" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="b5945fc3-d6ff-431f-87ff-aa07a15fde27" x="16" y="1" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d455c631-ab0f-42f5-a8bc-2f24ef8fdb5e" x="28" y="100" width="259" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Thanks, Come again.]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b5945fc3-d6ff-431f-87ff-aa07a15fde27" x="16" y="99" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="3ec07a1d-1f7f-4ef1-9cfd-848375090c22" x="172" y="18" width="69" height="13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Service Charges]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0d74a266-24ee-42d7-81b8-555dd8f0b39d" x="243" y="17" width="47" height="13"/>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_service_charge}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

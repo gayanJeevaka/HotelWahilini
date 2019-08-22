@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.EmployeeUIController">
+   <children>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="449.0" layoutY="70.0" prefHeight="458.0" prefWidth="749.0" />
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="34.0" layoutY="69.0" prefHeight="458.0" prefWidth="405.0" />
+      <Label layoutX="79.0" layoutY="90.0" text="Name :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="79.0" layoutY="140.0" text="NIC :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="79.0" layoutY="240.0" text="Address :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="79.0" layoutY="340.0" text="Tel No 1 :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="79.0" layoutY="390.0" text="Tel No 2:-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField id="TxtEmp" fx:id="txtName" layoutX="179.0" layoutY="90.0" onKeyReleased="#txtNameKR" prefHeight="25.0" prefWidth="250.0" promptText="Enter Name with initials" />
+      <TextField id="TxtEmp" fx:id="txtNIC" layoutX="179.0" layoutY="140.0" onKeyReleased="#txtNICKR" prefHeight="25.0" prefWidth="250.0" promptText="Enter NIC" />
+      <RadioButton fx:id="rbtMale" layoutX="179.0" layoutY="190.0" mnemonicParsing="false" onAction="#rbtGender" selected="true" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgGender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbtFemale" layoutX="246.0" layoutY="190.0" mnemonicParsing="false" onAction="#rbtGender" text="Female" toggleGroup="$tgGender" />
+      <TextArea id="TxtEmp" fx:id="txtAddress" layoutX="179.0" layoutY="240.0" onKeyReleased="#txtAddressKR" prefHeight="75.0" prefWidth="250.0" promptText="Enter Postal Address" />
+      <TextField id="TxtEmp" fx:id="txtTellNo1" layoutX="179.0" layoutY="340.0" onKeyReleased="#txtTellNo1KR" prefHeight="25.0" prefWidth="250.0" promptText="Enter Tel No1" />
+      <TextField id="TxtEmp" fx:id="txtTellNo2" layoutX="179.0" layoutY="390.0" onKeyReleased="#txtTellNo2KR" prefHeight="25.0" prefWidth="250.0" promptText="Enter Tel No2" />
+      <TableView fx:id="tbEmployee" layoutX="467.0" layoutY="171.0" onMouseClicked="#tbEmployeeMC" prefHeight="326.0" prefWidth="711.0">
+        <columns>
+          <TableColumn fx:id="colName" prefWidth="166.0" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="95.0" text="NIC" />
+          <TableColumn fx:id="colTelNo1" prefWidth="100.0" text="Tel No1" />
+            <TableColumn fx:id="colGender" prefWidth="93.0" text="Gender" />
+            <TableColumn fx:id="colAddress" prefWidth="243.0" text="Address" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <TextField id="TxtEmp" fx:id="txtSerName" layoutX="701.0" layoutY="127.0" onKeyReleased="#txtSerNameKR" prefHeight="25.0" prefWidth="215.0" promptText="Enter Employee Name" />
+      <Label layoutX="579.0" layoutY="131.0" text="Search By Name :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="79.0" layoutY="190.0" text="Gender :-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label id="labelColor" contentDisplay="TOP" prefHeight="48.0" prefWidth="1250.0" stylesheets="@css/Custom.css" text="Employee Registration" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="48.0" fitWidth="53.0" layoutX="292.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/employee.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="526.0" layoutY="119.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/EmpSerch.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="121.0" layoutY="460.0" prefHeight="48.0" prefWidth="266.0">
+         <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAP" prefHeight="40.0" prefWidth="70.0" styleClass="button-Cruds" text="Save">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#btnClearAP" prefHeight="40.0" prefWidth="70.0" styleClass="button-Cruds" text="Clear">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="40.0" prefWidth="65.0" styleClass="button-Cruds" text="Update">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button id="button-Delete" fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="40.0" prefWidth="60.0" styleClass="button-Delete" text="Delete">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <Label layoutX="71.0" layoutY="90.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="140.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="190.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="240.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="340.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+</AnchorPane>

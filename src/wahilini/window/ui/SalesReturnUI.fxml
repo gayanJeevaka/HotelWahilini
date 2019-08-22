@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneSRtn" onKeyPressed="#paneSRtnKP" onKeyReleased="#paneSRtnKR" onMouseClicked="#paneSRtnMC" prefHeight="620.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.SalesReturnUIController">
+   <children>
+      <TextField fx:id="txtxInvoiceNo" layoutX="281.0" layoutY="83.0" onKeyReleased="#txtxInvoiceNoKR" prefHeight="25.0" prefWidth="200.0" promptText="Enter Invoice No">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="945.0" layoutY="150.0" prefHeight="297.0" prefWidth="272.0" />
+      <Label fx:id="lblInvNo" layoutX="173.0" layoutY="89.0" text="Invoice No:-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TableView id="table-row-cell" fx:id="tbInvoiceItems" layoutX="21.0" layoutY="151.0" prefHeight="427.0" prefWidth="919.0">
+        <columns>
+          <TableColumn fx:id="colNo" prefWidth="75.0" text="No" />
+          <TableColumn fx:id="colItem" prefWidth="290.0" text="Item " />
+            <TableColumn id="table-cell-right" fx:id="colUnitPrice" text="Unit Price" />
+            <TableColumn id="table-cell-right" fx:id="colQty" prefWidth="87.0" text="QTY" />
+            <TableColumn id="table-cell-right" fx:id="colDiscount" prefWidth="96.0" text="Discount" />
+            <TableColumn id="table-cell-right" fx:id="colSubtotal" prefWidth="90.0" text="Sub Total" />
+            <TableColumn id="table-cell-right" fx:id="colReturn" prefWidth="75.0" text="RTN Qty" />
+            <TableColumn id="table-cell-right" fx:id="colRtnAmt" prefWidth="105.0" text="Refund Amt" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtTotalRefundAmt" alignment="CENTER_RIGHT" editable="false" layoutX="1105.0" layoutY="521.0" onKeyReleased="#txtxInvoiceNoKR" prefHeight="25.0" prefWidth="100.0" promptText="0.00">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></TextField>
+      <Label layoutX="957.0" layoutY="527.0" text="Total Refund Amount :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Button fx:id="btnSave" layoutX="505.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnSaveAP" prefHeight="34.0" prefWidth="81.0" text="Save" />
+      <Button layoutX="586.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="34.0" prefWidth="81.0" text="Clear" />
+      <Label id="labelColor" contentDisplay="TOP" prefHeight="48.0" prefWidth="1230.0" stylesheets="@css/controls.css" text="Sales Returns " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <Label layoutX="957.0" layoutY="492.0" text="Paid Amount :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPaidAmt" alignment="CENTER_RIGHT" editable="false" layoutX="1105.0" layoutY="486.0" onKeyReleased="#txtxInvoiceNoKR" prefHeight="31.0" prefWidth="100.0" promptText="0.00">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <Label layoutX="959.0" layoutY="218.0" text="Invoice Date :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="253.0" text="Time :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="288.0" text="Taken By :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblInvDate" alignment="CENTER_RIGHT" layoutX="1075.0" layoutY="218.0" text="-- Enter Invoice No --">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblInvTime" alignment="CENTER_RIGHT" layoutX="1075.0" layoutY="253.0" text="-- Enter Invoice No --">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTaken" alignment="CENTER_RIGHT" layoutX="1075.0" layoutY="288.0" text="-- Enter Invoice No --">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label id="label-align" fx:id="lblNetTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="1075.0" layoutY="393.0" text="-- Enter Invoice No --" textAlignment="RIGHT">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label id="label-align" fx:id="lblDiscount" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="1075.0" layoutY="358.0" text="-- Enter Invoice No --" textAlignment="RIGHT">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label id="label-align" fx:id="lblGrandTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="1075.0" layoutY="323.0" text="-- Enter Invoice No --" textAlignment="RIGHT">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="393.0" text="Net Total :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="358.0" text="Total Discount :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="323.0" text="Grand Total :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblInvoiceNo" alignment="CENTER_RIGHT" layoutX="1075.0" layoutY="183.0" text="-- Enter Invoice No --" textFill="#3a8ada">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="959.0" layoutY="183.0" text="Invoice No :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="63.0" fitWidth="75.0" layoutX="119.0" layoutY="58.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Inventory.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="69.0" layoutX="276.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/srtns.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+</AnchorPane>

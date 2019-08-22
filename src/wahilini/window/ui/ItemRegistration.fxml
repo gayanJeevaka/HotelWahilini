@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="PaneItemReg" onKeyPressed="#PaneItemRegKP" onKeyReleased="#PaneItemRegKR" onMouseClicked="#PaneItemRegMC" prefHeight="620.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.ItemRegistrationController">
+   <children>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="53.0" layoutY="57.0" prefHeight="404.0" prefWidth="463.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="121.0" layoutY="90.0" text="Item Type :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="121.0" layoutY="140.0" text="Category :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ComboBox fx:id="cmbItemType" editable="true" layoutX="206.0" layoutY="90.0" onAction="#cmbItemTypeAP" prefHeight="30.0" prefWidth="232.0" promptText="Select Item Type" />
+      <ComboBox fx:id="cmbCategory" layoutX="206.0" layoutY="140.0" onAction="#cmbCategoryAP" prefWidth="232.0" promptText="Select Category" styleClass="sinhala-ComboBox" visibleRowCount="15" />
+      <Label layoutX="121.0" layoutY="190.0" text="Item Name :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="121.0" layoutY="240.0" text="Retail Price :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="txtItemName" layoutX="206.0" layoutY="190.0" onKeyReleased="#txtItemNameKR" prefHeight="32.0" prefWidth="232.0" promptText="Enter Item Name">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtRetailPrice" alignment="CENTER_RIGHT" layoutX="206.0" layoutY="240.0" onKeyReleased="#txtRetailPriceKR" prefHeight="25.0" prefWidth="100.0" promptText="0.00">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <HBox layoutX="163.0" layoutY="351.0" prefHeight="36.0" prefWidth="260.0">
+         <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAP" prefHeight="36.0" prefWidth="63.0" styleClass="button-Cruds" text="Save" />
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="36.0" prefWidth="61.0" styleClass="button-Cruds" text="Clear" />
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="36.0" prefWidth="65.0" styleClass="button-Cruds" text="Update" />
+            <Button id="button-Delete" fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="36.0" prefWidth="67.0" styleClass="button-Delete" text="Delete" />
+         </children>
+      </HBox>
+      <TableView fx:id="tbItems" layoutX="543.0" layoutY="58.0" onMouseClicked="#tbItemsMC" prefHeight="522.0" prefWidth="647.0">
+        <columns>
+          <TableColumn fx:id="colItemName" prefWidth="290.0" resizable="false" text="Item Name" />
+            <TableColumn id="table-cell-right" fx:id="colBarcode" prefWidth="120.0" resizable="false" text="Type" />
+          <TableColumn id="table-cell-right" fx:id="colSpecialPrice" minWidth="0.0" prefWidth="120.0" resizable="false" text="Category" />
+            <TableColumn id="table-cell-right" fx:id="colRetailPrice" prefWidth="90.0" resizable="false" text="Retail Price" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Label id="labelColor" contentDisplay="TOP" prefHeight="47.0" prefWidth="1250.0" text="Item Registration" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+         <stylesheets>
+            <URL value="@css/tableList.css" />
+            <URL value="@css/controls.css" />
+         </stylesheets>
+      </Label>
+      <ImageView fitHeight="47.0" fitWidth="46.0" layoutX="299.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/item.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Label layoutX="114.0" layoutY="90.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="140.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="190.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="240.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbtnKotYes" layoutX="209.0" layoutY="290.0" mnemonicParsing="false" onAction="#rbtnKotAP" selected="true" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgKotItem" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="121.0" layoutY="290.0" text="KOT Item :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbtnKotNo" layoutX="265.0" layoutY="290.0" mnemonicParsing="false" onAction="#rbtnKotAP" text="No" toggleGroup="$tgKotItem">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="114.0" layoutY="289.0" text="*" textFill="#ee0606">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@css/tableList.css" />
+      <URL value="@css/controls.css" />
+   </stylesheets>
+</AnchorPane>

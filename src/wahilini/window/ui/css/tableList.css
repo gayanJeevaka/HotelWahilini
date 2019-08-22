@@ -1,0 +1,55 @@
+.table-view {
+    -fx-base:#999999;
+    -fx-font-size: 11pt;
+    -fx-font-family: calibri;
+    -fx-control-inner-background: #ffffff;
+}
+.table-view .scroll-bar{
+    -fx-background-color: whitesmoke;
+}
+.table-view .column-header .label {
+    -fx-font-size: 12pt;
+    -fx-font-family: calibri;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+}
+#table-row-cell:filled {
+    -fx-background-color:#4d4d4d;
+}
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color:#ff6666;
+}
+#table-cell-sinhala{
+    -fx-font-family: FMBindumathi;
+    -fx-font-size:12pt;
+    font-weight: bold;
+}
+#table-cell-right{
+    -fx-alignment: center-right;
+    -fx-margin-right :30px; 
+
+}
+#table-cell-center{
+    -fx-alignment: center;
+    -fx-marjin-right :30px; 
+}
+.list{
+    -fx-base:#666666;
+    -fx-control-inner-background: #ffffff;
+    -fx-text-fill: black;
+    -fx-text-alignment: center;
+}
+.list:focused {
+    -fx-background-color:#999999;
+}
+.list:focused .list-cell:filled:focused:selected {
+    -fx-background-color:#ff6666;
+}
+#list-view-sinhala{
+    -fx-font-family: FMBindumathi;
+    -fx-font-size:12pt;
+}
+#list-view-english{
+    -fx-font-family: calibri;
+    -fx-font-size:11pt;   
+}

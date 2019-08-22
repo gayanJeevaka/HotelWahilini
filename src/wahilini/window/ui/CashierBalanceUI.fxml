@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.CashierBalanceUIController">
+   <children>
+      <Label id="Label" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="134.0" layoutY="54.0" prefHeight="48.0" prefWidth="731.0" />
+      <ImageView fitHeight="41.0" fitWidth="45.0" layoutX="137.0" layoutY="58.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Inventory.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbEmployee" layoutX="266.0" layoutY="62.0" onAction="#cmbEmployeeAP" prefHeight="32.0" prefWidth="200.0" promptText="Select Employee" visibleRowCount="20" />
+      <DatePicker id="TxtEmp" fx:id="dteStartDate" editable="false" layoutX="539.0" layoutY="62.0" onAction="#dteStartDateAP" prefHeight="32.0" prefWidth="200.0" promptText="Select a Date" />
+      <Label layoutX="488.0" layoutY="69.0" text="Date :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TableView fx:id="tbInvoice" layoutX="159.0" layoutY="123.0" prefHeight="458.0" prefWidth="661.0">
+        <columns>
+          <TableColumn id="table-cell-right" fx:id="colNo" prefWidth="38.0" text="#" />
+          <TableColumn id="table-cell-right" fx:id="colInvoiceNo" prefWidth="50.0" text="INV #" />
+            <TableColumn id="table-cell-center" fx:id="colTime" prefWidth="75.0" text="Time" />
+            <TableColumn id="table-cell-center" fx:id="colPayTyoe" prefWidth="75.0" text="Pay Type" />
+            <TableColumn id="table-cell-right" fx:id="colGrandTotal" prefWidth="100.0" text="Grand Total" />
+            <TableColumn id="table-cell-right" fx:id="colServiceCharges" prefWidth="100.0" text="Charges" />
+            <TableColumn id="table-cell-right" fx:id="colDiscount" prefWidth="100.0" text="Discount" />
+            <TableColumn id="table-cell-right" fx:id="colNetTotal" prefWidth="100.0" text="Net Total" />
+        </columns>
+      </TableView>
+      <Label layoutX="184.0" layoutY="69.0" text="Employee :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="842.0" layoutY="481.0" text="Card Income :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="txtCardIncome" alignment="CENTER_RIGHT" editable="false" layoutX="977.0" layoutY="477.0" prefWidth="100.0" promptText="0.00">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="txtNetCashIncome" alignment="CENTER_RIGHT" editable="false" layoutX="977.0" layoutY="517.0" prefWidth="100.0" promptText="0.00">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></TextField>
+      <Label layoutX="842.0" layoutY="521.0" text="Total Income :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label id="labelColor" contentDisplay="TOP" prefHeight="48.0" prefWidth="1250.0" stylesheets="@css/Custom.css" text="Cashier Balance " textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="48.0" fitWidth="61.0" layoutX="296.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/views.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Label layoutX="160.0" layoutY="103.0" text="Invoice Details" textFill="#4283de">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="841.0" layoutY="441.0" text="Cash Income :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCashIncome" alignment="CENTER_RIGHT" editable="false" layoutX="976.0" layoutY="437.0" prefHeight="31.0" prefWidth="100.0" promptText="0.00">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextField>
+      <Button layoutX="755.0" layoutY="62.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="32.0" prefWidth="72.0" text="Clear" />
+   </children>
+   <stylesheets>
+      <URL value="@css/tableList.css" />
+      <URL value="@css/controls.css" />
+   </stylesheets>
+</AnchorPane>

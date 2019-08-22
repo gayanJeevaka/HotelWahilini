@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneInvoice" onKeyPressed="#paneInvoiceKP" onKeyReleased="#paneInvoiceKR" onMouseClicked="#paneInvoiceMC" prefHeight="625.0" prefWidth="1230.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.InvoiceUIController">
+   <children>
+      <TableView id="table-row-cell" fx:id="tbInvoiceItems" layoutX="161.0" layoutY="201.0" onKeyReleased="#tbInvoiceItemsKR" prefHeight="408.0" prefWidth="706.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="363.0" AnchorPane.topAnchor="201.0">
+        <columns>
+          <TableColumn id="table-cell-right" fx:id="colNo" maxWidth="55.0" minWidth="38.0" prefWidth="38.0" text="No" />
+          <TableColumn fx:id="colItemName" maxWidth="367.0" minWidth="350.0" prefWidth="359.0" sortable="false" text="Item Name" />
+            <TableColumn id="table-cell-right" fx:id="colUnitPrice" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" sortable="false" styleClass="table-view" text="Unit Price" />
+            <TableColumn id="table-cell-right" fx:id="colQty" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" sortable="false" styleClass="table-view" text="Qty" />
+            <TableColumn id="table-cell-right" fx:id="colSubTotal" maxWidth="143.0" minWidth="113.0" prefWidth="100.0" sortable="false" styleClass="table-view" text="Sub Total" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Label layoutX="198.0" layoutY="123.0" prefHeight="25.0" prefWidth="109.0" text="Item Name :- " AnchorPane.leftAnchor="198.0" AnchorPane.topAnchor="123.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblQty" layoutX="592.0" layoutY="163.0" prefHeight="25.0" prefWidth="44.0" text="Qty :-" AnchorPane.leftAnchor="592.0" AnchorPane.topAnchor="163.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txtQty" alignment="CENTER_RIGHT" layoutX="636.0" layoutY="161.0" minHeight="25.0" onKeyReleased="#txtQtyKR" prefHeight="30.0" prefWidth="100.0" promptText="0" AnchorPane.leftAnchor="636.0" AnchorPane.topAnchor="161.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></TextField>
+      <Button fx:id="btnSave" layoutX="1005.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnSaveAP" prefHeight="40.0" prefWidth="100.0" text="Paid" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <TextField fx:id="txtNoOfItems" alignment="CENTER_RIGHT" editable="false" layoutX="1005.0" layoutY="372.0" minHeight="25.0" prefHeight="30.0" prefWidth="100.0" promptText="0.0" styleClass="textFields" AnchorPane.bottomAnchor="223.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtGrandTotal" alignment="CENTER_RIGHT" editable="false" layoutX="1005.0" layoutY="412.0" minHeight="30.0" prefHeight="25.0" prefWidth="100.0" promptText="0.00" styleClass="textFields" AnchorPane.bottomAnchor="183.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtServiceCharge" alignment="CENTER_RIGHT" editable="false" layoutX="1005.0" layoutY="452.0" minHeight="30.0" prefHeight="25.0" prefWidth="100.0" promptText="0.00" styleClass="textFields" AnchorPane.bottomAnchor="143.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtNetTotal" alignment="CENTER_RIGHT" editable="false" layoutX="1005.0" layoutY="490.0" minHeight="30.0" prefHeight="25.0" prefWidth="100.0" promptText="0.00" styleClass="textFields" AnchorPane.bottomAnchor="105.0" AnchorPane.rightAnchor="125.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="883.0" layoutY="375.0" prefHeight="25.0" prefWidth="100.0" text="No Items :-" AnchorPane.bottomAnchor="225.0" AnchorPane.rightAnchor="247.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="883.0" layoutY="415.0" prefHeight="25.0" prefWidth="100.0" text="Gross Total :-" AnchorPane.bottomAnchor="185.0" AnchorPane.rightAnchor="247.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="883.0" layoutY="455.0" prefHeight="25.0" prefWidth="121.0" text="Charges 10% :-" AnchorPane.bottomAnchor="145.0" AnchorPane.rightAnchor="226.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="883.0" layoutY="493.0" prefHeight="25.0" prefWidth="100.0" text="Net Total :-" AnchorPane.bottomAnchor="107.0" AnchorPane.rightAnchor="247.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtItemName" editable="false" layoutX="290.0" layoutY="120.0" prefHeight="32.0" prefWidth="329.0" promptText="-- Select an Item --">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="912.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="40.0" prefWidth="85.0" text="Clear" AnchorPane.bottomAnchor="33.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="198.0" layoutY="163.0" prefHeight="25.0" prefWidth="72.0" text="Price :-">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label id="labelColor" contentDisplay="CENTER" prefHeight="48.0" prefWidth="1230.0" stylesheets="@css/controls.css" text="Sales Invoice" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="350.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="txtNetPrice" alignment="CENTER_RIGHT" editable="false" layoutX="290.0" layoutY="160.0" prefHeight="27.0" prefWidth="140.0" promptText="-- Select an Item --">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></TextField>
+      <HBox layoutY="49.0" prefHeight="40.0" prefWidth="1230.0" styleClass="Pane">
+         <children>
+            <Label fx:id="lblCustTelNo" minHeight="-Infinity" minWidth="100.0" prefHeight="20.0" prefWidth="140.0" text="Customer Tel No :-" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCusTelNo" minHeight="25.0" onKeyReleased="#txtCusTelNoKR" prefHeight="36.0" prefWidth="200.0" promptText="XXX-XXX-XXXX">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <Label minHeight="-Infinity" minWidth="100.0" prefWidth="140.0" text="Customer Name :- " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCustomerName" minHeight="-Infinity" minWidth="100.0" prefHeight="20.0" prefWidth="353.0" text="UNKNOWN " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#btnAddCusomerAP" prefHeight="27.0" prefWidth="129.0" text="Add New Customer">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView fitHeight="55.0" fitWidth="59.0" layoutX="290.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <DropShadow />
+         </effect>
+         <image>
+            <Image url="@../image/bal.png" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@css/controls.css" />
+      <URL value="@css/tableList.css" />
+   </stylesheets>
+  
+</AnchorPane>

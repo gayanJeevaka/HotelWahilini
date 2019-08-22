@@ -1,0 +1,86 @@
+
+
+.mainFxmlClass {
+
+    -fx-background-color:#cccccc;
+    -fx-background-size: stretch;
+}
+
+.Login-button{
+
+    -fx-text-fill:#ffffff;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 16px;
+
+
+    -fx-background-color:linear-gradient(#33ff00 10%, #00cc33 70%);
+    -fx-border-color:#ccffcc;
+    -fx-border-radius:5px;
+    -fx-background-radius:5px;
+    -fx-border-width:2px;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 5;
+}
+.Login-button:hover{
+    -fx-background-color:linear-gradient(#66ff66 10%, #00cc33 70%);
+}
+
+.Login-button:pressed{
+    -fx-scale-x:0.90;
+    -fx-scale-y:0.90;
+}
+
+.toolBar{
+
+    -fx-background-color: linear-gradient( #666666 10%, #333333 80%);
+
+
+}
+.toolBar2{
+
+    -fx-background-color: linear-gradient(#333333 10%, #666666 80%);
+
+
+}
+.txt{
+
+    -fx-border-radius:5px;
+    -fx-border-color:#999999;
+    -fx-border-width:1px;
+    -fx-background-radius:5px;
+}
+
+.button-Cancel{
+
+    -fx-text-fill:white;
+
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 16px;
+
+    -fx-background-color:linear-gradient(#ff9966 10%, #ff0033 70%);
+    -fx-border-color:#ffcccc;
+    -fx-border-radius:5px;
+    -fx-background-radius:5px;
+    -fx-border-width:2px;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 5;
+}
+.button-Cancel:hover{
+    -fx-background-color:linear-gradient(#ff6666 10%, #ff0033 70%);
+}
+
+.button-Cancel:pressed{
+    -fx-scale-x:0.90;
+    -fx-scale-y:0.90;
+}
+
+
+
+
+.pane{
+    -fx-background-color:#ff9900;
+    -fx-border-color:#ffffff;
+    -fx-background-radius:5px;
+    -fx-border-radius:5px;
+    -fx-border-width:3px;
+}

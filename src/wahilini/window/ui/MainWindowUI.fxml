@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anpMain" prefHeight="735.0" prefWidth="1365.0" styleClass="mainFxmlClass" stylesheets="@css/mainwindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wahilini.window.ui.MainWindowUIController">
+   <children>
+      <MenuBar layoutY="28.0" prefHeight="35.0" prefWidth="1365.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="People">
+            <items>
+              <MenuItem fx:id="mItemEmployee" mnemonicParsing="false" onAction="#mItemEmployeeAP" text="Employee" />
+                  <MenuItem fx:id="mItemPrivilege" mnemonicParsing="false" onAction="#mItemPrivilegeAP" text="User A/C &amp; Privilege" />
+                  <MenuItem fx:id="mItemPasswordChange" mnemonicParsing="false" onAction="#mItemPasswordChangeAP" text="Password Change" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Item">
+            <items>
+              <MenuItem fx:id="mItemRegistration" mnemonicParsing="false" onAction="#mItemRegistrationAP" text="Item Registration" />
+                  <MenuItem fx:id="mItemPriceList" mnemonicParsing="false" onAction="#mItemPriceListAP" text="Price List" />
+                  <MenuItem fx:id="mItemCategoryReg" mnemonicParsing="false" onAction="#mItemCategoryRegAP" text="Category Reg" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Sales">
+            <items>
+                  <MenuItem fx:id="mItemCustomerReg" mnemonicParsing="false" onAction="#mItemCustomerRegAP" text="Customer Reg" />
+              <MenuItem fx:id="mItemInvoiceTakeAway" mnemonicParsing="false" onAction="#mItemInvoiceTakeAwayAP" text="Invoice Take Away" />
+                  <MenuItem fx:id="mItemInvoiceTableRoom" mnemonicParsing="false" onAction="#mItemInvoiceTableRoomAP" text="Invoice Table/Room" />
+                  <MenuItem fx:id="mitemInvoiceHistory" mnemonicParsing="false" onAction="#mitemInvoiceHistoryAP" text="Invoice History View" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Other">
+               <items>
+                  <MenuItem fx:id="mItemCashierBalance" mnemonicParsing="false" onAction="#mItemCashierBalanceAP" text="Cashie Balance Check" />
+                  <MenuItem fx:id="mItemDbBackup" mnemonicParsing="false" onAction="#mItemDbBackupAP" text="Database Backup" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="-5.0" layoutY="63.0" prefHeight="50.0" prefWidth="1371.0" styleClass="HeaderBg" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="63.0">
+         <children>
+            <Text fill="#fefefe" layoutX="91.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#b6b6b6" layoutX="92.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 1.1.1" />
+            <Label fx:id="lblClock" layoutX="612.0" layoutY="8.0" prefHeight="35.0" prefWidth="127.0" styleClass="ClockView" />
+            <Button id="Button" alignment="CENTER" layoutX="1239.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnLogOff" prefHeight="47.0" prefWidth="107.0" styleClass="Button" text="Log Off" textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblUser" layoutX="902.0" layoutY="2.0" prefHeight="30.0" prefWidth="320.0" text="XXXXXXX" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="859.0" layoutY="1.0" pickOnBounds="true" preserveRatio="false">
+               <image>
+                  <Image url="@../image/user1.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Accordion layoutX="14.0" layoutY="119.0" prefHeight="0.0" prefWidth="0.0" />
+      <VBox focusTraversable="true" layoutY="113.0" prefHeight="638.0" prefWidth="138.0" styleClass="LeftMenu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="113.0">
+         <children>
+            <Button fx:id="btnInvoiceTakeAway" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnInvoiceTakeAwayAP" prefHeight="90.0" prefWidth="136.0" styleClass="LeftMenu" text="Invoce Take Away" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/Sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnTableRoomInvoice" contentDisplay="TOP" layoutX="10.0" layoutY="446.0" mnemonicParsing="false" onAction="#btnTableRoomInvoiceAP" prefHeight="90.0" prefWidth="136.0" styleClass="LeftMenu" text="Invoice Table/Room " textFill="#fffdfd">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="51.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/Sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnPriceList" contentDisplay="TOP" layoutX="10.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnPriceListAP" prefHeight="93.0" prefWidth="136.0" styleClass="LeftMenu" text="Price list" textFill="#fffdfd">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/Inventory.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnCustomerReg" contentDisplay="TOP" layoutX="10.0" layoutY="289.0" mnemonicParsing="false" onAction="#btnCustomerRegAP" prefHeight="90.0" prefWidth="136.0" styleClass="LeftMenu" text="Customer Reg" textFill="#fffdfd">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="59.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/PeopleMenu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnItemReg" contentDisplay="TOP" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnItemRegAP" prefHeight="90.0" prefWidth="136.0" styleClass="LeftMenu" text="Item Reg" textFill="#fffdfd">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="49.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/Item-reg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnCatReg" contentDisplay="TOP" layoutX="10.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnCatRegAP" prefHeight="90.0" prefWidth="136.0" styleClass="LeftMenu" text="Category Reg" textFill="#fffdfd">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/CategoryReg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnUserReg" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnUserRegAP" prefHeight="90.0" prefWidth="136.0" styleClass="LeftMenu" text="Employee Reg" textFill="#fffdfd">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="59.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/PeopleMenu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <TabPane fx:id="tabPane" focusTraversable="false" layoutX="138.0" layoutY="113.0" prefHeight="630.0" prefWidth="1227.0">
+         <styleClass>
+            <String fx:value="tabPane" />
+            <String fx:value="mainFxmlClass" />
+         </styleClass>
+         <tabs>
+            <Tab closable="false" text="Home">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="610.0" prefWidth="1229.0" styleClass="mainFxmlClass">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="235.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-assignPW.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="365.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-customer.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="495.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-priceList.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="625.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-invoiceView.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="755.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-privilege.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="885.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-salesRerurn.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1015.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../image/d-grnView.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="105.0" layoutY="130.0" pickOnBounds="true" preserveRatio="false">
+                           <image>
+                              <Image url="@../image/d-cashierBalane.jpg" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label prefHeight="31.0" prefWidth="1365.0" styleClass="pane" text="                                                                                                                                                               Hotel Wahilini" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button id="minimize-button" layoutX="1307.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnMinimizeAP" prefHeight="35.0" prefWidth="30.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button id="close-button" layoutX="1337.0" layoutY="5.0" mnemonicParsing="false" onAction="#btnCloseAp" prefHeight="24.0" prefWidth="24.0" styleClass="close-button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

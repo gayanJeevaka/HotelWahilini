@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="208.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.DbBackUpUIController">
+   <children>
+      <Label layoutX="12.0" prefHeight="42.0" prefWidth="184.0" text="Data Base Backup" textFill="#178ed3">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="63.0" text="File Location :-">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextArea fx:id="txtFileLocation" editable="false" layoutX="94.0" layoutY="61.0" prefHeight="80.0" prefWidth="313.0" promptText="Select the location for the database backup" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font></TextArea>
+      <Button fx:id="btnBackup" layoutX="322.0" layoutY="170.0" mnemonicParsing="false" onAction="#btnBackupAP" text="Create Backup" />
+      <Button fx:id="btnLocation" layoutX="213.0" layoutY="170.0" mnemonicParsing="false" onAction="#btnLocationAP" text="Choose Location" />
+      <Separator layoutY="41.0" prefHeight="6.0" prefWidth="373.0" />
+      <Separator layoutX="51.0" layoutY="155.0" prefHeight="6.0" prefWidth="373.0" />
+   </children>
+</AnchorPane>
